@@ -1,10 +1,10 @@
 
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import Neelam from "../asserts/about/Neelam.png";
+import Swarnaone from "../asserts/about/swarnaone.png"
 import TechinalLead from "../asserts/about/Leadimage.png"
 import harshith from "../asserts/about/Harshith.png";
-import Gurav from "../asserts/about/Gura.png";
+
 import Dipika from "../asserts/about/Dipika.png";
 import { Button } from "@/components/ui/button";
 
@@ -12,50 +12,27 @@ const About = () => {
   const teamMembers = [
 
     {
-      name: "Dipika Ranabhat",
-      role: "Machine Learning Engineer",
-      image:Dipika,
-      description: "Machine learning researcher specializing in medical image analysis and deep learning.",
+      name: "Sai Sankar Swarna",
+      role: "Back-end, API design & MLOps",
+      image:Swarnaone,
+      description: "Manages backend services, API development, and MLOps workflow.",
       social: {
-        github: "#",
-        linkedin: "#",
-        twitter: "#"
+        github: "https://github.com/Swarna7414",
+        linkedin: "https://www.linkedin.com/in/swanra-sai-sankar-000797191/",
       }
     }
     ,
     {
       name: "Harshith Nalla",
-      role: "Full-stack developer",
-      image: harshith,
-      description: "A full-stack developer working on frontend, backend, and system architecture for DentiMap.",
-      social: {
-        github: "#",
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      name: "Gaurav Regmi",
-      role: "Backend, API design & MLOps",
-      image:Gurav,
-      description: "Manages backend services, API development, and MLOps workflows.",
-      social: {
-        github: "#",
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      name: "Neelam Karki",
       role: "Frontend & UI",
-      image: Neelam,
+      image: harshith,
       description: "Builds responsive UI and user-friendly interfaces using React and Tailwind for DentiMap.",
       social: {
         github: "#",
         linkedin: "#",
         twitter: "#"
       }
-    }
+    },
   ];
 
   return (
@@ -96,9 +73,6 @@ const About = () => {
                       <Button size="icon" variant="secondary" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30">
                         <Linkedin className="h-4 w-4 text-white" />
                       </Button>
-                      <Button size="icon" variant="secondary" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30">
-                        <Twitter className="h-4 w-4 text-white" />
-                      </Button>
                     </div>
                   </div>
                   <div className="p-6">
@@ -112,7 +86,7 @@ const About = () => {
 
             {/* 2x2 grid for remaining 4 team members */}
             <div className="lg:col-span-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-1/2">
                 {teamMembers.map((member, index) => (
                   <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm mt-6 mb-6">
                     <CardContent className="p-0">
@@ -132,9 +106,6 @@ const About = () => {
                           <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30">
                             <Linkedin className="h-3 w-3 text-white" />
                           </Button>
-                          <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30">
-                            <Twitter className="h-3 w-3 text-white" />
-                          </Button>
                         </div>
                       </div>
                       
@@ -148,6 +119,16 @@ const About = () => {
                   </Card>
                 ))}
               </div>
+
+              <div className="hidden lg:block mt-20">
+                <h1 className="font-bold text-4xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Who are we ?</h1>
+                {/** here */}
+                <p className="text-justify font-semibold text-md mt-6">We’re graduate students at the University of South Dakota who created this website to make helpful technology freely accessible to everyone. 
+                  Our goal is to improve AI in healthcare by building practical, research-driven tools. By combining our technical skills with insights from the 
+                  medical field, we aim to develop solutions that support doctors, researchers, and patients alike — making advanced technology more human-centered 
+                  and accessible.</p>
+              </div>
+
             </div>
           </div>
         </div>
