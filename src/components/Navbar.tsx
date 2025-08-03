@@ -67,6 +67,13 @@ const Navbar = () => {
               )}
             </Button>
 
+
+            <div>
+              <Link to="/login">
+                <button className="dark:hover:bg-white hover:text-white hover:bg-black dark:hover:text-black px-3 py-1.5 hover:rounded-md transition-all duration-200">Login</button>
+              </Link>
+            </div>
+
             {/* Mobile menu button */}
             <div className="md:hidden">
               <Button
