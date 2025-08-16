@@ -5,10 +5,13 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs, { Dayjs } from "dayjs";
+import { useToast } from "@/hooks/use-toast";
+
 
 const SignupPage = () => {
 
   const navigate=useNavigate();
+  const { toast } = useToast();
 
   const [dob,setdob]=useState<Dayjs | null>(null);
 
@@ -28,9 +31,92 @@ const SignupPage = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    
+    if(!dob){
+      toast({
+        title: "Missing date of birth",
+        description: "Please select your Date of Birth.",
+        variant: "destructive",
+        duration: 3000,
+      });
+      return;
+    }
+
+    if(formData.password !== formData.confirmPassword){
+      toast({
+        title: "Passwords do not match",
+        description: "Password and Confirm Password must be the same.",
+        variant: "destructive",
+        duration: 3000,
+      });
+      return;
+    }
+
+    if(dob.isAfter(dayjs())){
+      toast({
+        title: "Invalid date of birth",
+        description: "Date of Birth cannot be in the future.",
+        variant: "destructive",
+        duration: 3000,
+      });
+      return;
+    }
+     
+
+    try{
+
+      const response = await fetch("http://localhost:8080/api/auth/register",{
+        method:"POST",
+        headers: {
+          "Content-Type" : "application/json"
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          firstName:formData.firstName,
+          lastName:formData.lastName,
+          email:formData.email,
+          gender:formData.gender,
+          password:formData.password,
+          confirmPassword:formData.confirmPassword,
+          dateOfBirth:dob?.format("YYYY-MM-DD")
+        })
+      });
+
+      const res = await response.json();
+
+      if(res.success){
+        localStorage.setItem("PendingUser",JSON.stringify({
+          ...formData,
+          dateofBirth: dob.format("YYYY-MM-DD")
+        }));
+        toast({
+          title: "Registration started",
+          description: "OTP sent to your email. Please verify.",
+          duration: 3000,
+        });
+        navigate("/otp");
+      }else{
+        toast({
+          title: "Registration failed",
+          description: String(res.message || "Unable to register"),
+          variant: "destructive",
+          duration: 3000,
+        });
+      }
+
+    }catch(e){
+      console.log(e);
+      toast({
+        title: "Network error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+        duration: 3000,
+      });
+    }
+
+
   };
 
   return (
@@ -39,7 +125,7 @@ const SignupPage = () => {
         <h2 className="text-3xl font-bold text-gray-900">Create your account</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* First Name */}
+          {/* First Name bro */}
           <div>
             <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</label>
             <input
@@ -53,7 +139,7 @@ const SignupPage = () => {
             />
           </div>
 
-          {/* Last Name */}
+          {/* Last Name bro*/}
           <div>
             <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">Last Name</label>
             <input
@@ -67,7 +153,7 @@ const SignupPage = () => {
             />
           </div>
 
-          {/* Gender */}
+          {/* Gender (you are a Gay) */}
           <div>
             <label htmlFor="gender" className="block text-sm font-medium text-gray-700">Gender</label>
             <select
@@ -85,8 +171,7 @@ const SignupPage = () => {
             </select>
           </div>
 
-          {/* DOB */}
-          {/* Date of Birth (Calendar from MUI) */}
+          
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Date of Birth
@@ -102,7 +187,7 @@ const SignupPage = () => {
           </div>
 
 
-          {/* Email */}
+          {/* Email echay */}
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
             <input
@@ -116,7 +201,7 @@ const SignupPage = () => {
             />
           </div>
 
-          {/* Password */}
+          {/* Password pettu*/}
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
             <div className="relative">
@@ -132,7 +217,7 @@ const SignupPage = () => {
             </div>
           </div>
 
-          {/* Confirm Password */}
+          {/* Confirm Password chusko bro */}
           <div>
             <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">Confirm Password</label>
             <div className="relative">
@@ -154,7 +239,7 @@ const SignupPage = () => {
             </div>
           </div>
 
-          {/* Sign Up Button */}
+          {/* Nokku*/}
           <button
             type="submit"
             className="w-full bg-white border-2 hover:bg-gray-300 py-2 rounded-md transition"
@@ -163,7 +248,7 @@ const SignupPage = () => {
           </button>
         </form>
         <p className="text-center">
-          Already have an account? Please <span className="text-blue-600 hover:text-blue-700 hover:cursor-pointer font-semibold" onClick={()=> navigate('/login')}>Log in</span>
+          Already have an account? Please <span className="text-blue-600 hover:text-blue-700 cursor-pointer font-semibold" onClick={()=> navigate('/login')}>Log in</span>
         </p>
       </div>
     </div>

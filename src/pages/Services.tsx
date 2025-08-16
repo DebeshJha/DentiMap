@@ -1,12 +1,9 @@
 
-import { Camera, Upload, MessageCircle, Brain, Zap, Shield } from "lucide-react";
-import ServiceImage from "../asserts/services.png";
-import Secondary from "../asserts/Secondary.png";
-import Trend from "../asserts/Trend.png";
+import { Camera, Upload, MessageCircle, Brain, Zap, SearchCheck  } from "lucide-react";
 import Test from "../asserts/Test.png";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import test from "node:test";
+
 
 const Services = () => {
   const services = [
@@ -35,11 +32,11 @@ const Services = () => {
 
   return (
     <div className="min-h-screen pt-16 bg-background">
-      {/* Hero Section */}
+      
       <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-white to-white dark:from-black dark:via-black dark:to-black">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">AI Services</span>
+            Our <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">AI Services</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Experience the future of dental care with our cutting-edge AI-powered services designed to revolutionize dental diagnostics and patient care.
@@ -47,7 +44,7 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Services Grid */}
+      
       <div className="py-20 px-4 sm:px-6 lg:px-8 dark:bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -80,7 +77,7 @@ const Services = () => {
         </div>
       </div>
 
-      {/* AI Technology Section */}
+      
       <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -104,9 +101,9 @@ const Services = () => {
                   <p className="text-sm text-muted-foreground">Instant analysis and immediate results</p>
                 </div>
                 <div className="text-center">
-                  <Shield className="h-12 w-12 text-green-600 mx-auto mb-3" />
-                  <h3 className="font-semibold mb-2">99.8% Accuracy</h3>
-                  <p className="text-sm text-muted-foreground">Clinically validated diagnostic precision</p>
+                  <SearchCheck className="h-12 w-12 text-green-600 mx-auto mb-3" />
+                  <h3 className="font-semibold mb-2"> Smart Detection</h3>
+                  <p className="text-sm text-muted-foreground">Trained to detect early signs of dental disease</p>
                 </div>
                 <div className="text-center">
                   <Camera className="h-12 w-12 text-orange-600 mx-auto mb-3" />

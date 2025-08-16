@@ -73,11 +73,9 @@ dentai-vision-ai-web/
 
 ## Team
 
-- **Technical Lead:** Dr. Debesh Jha
-- **Machine Learning Engineer:** Dipika Ranabhat
-- **Full-stack Developer:** Harshith Nalla
-- **Backend & MLOps:** Gaurav Regmi
-- **Frontend & UI:** Neelam Karki
+- **Technical Lead & Machine Learning Engineer:** Dr. Debesh Jha
+- **Backend & MLOps:** Sai Sankar Swarna
+- **Frontend & UI:** Harshith Reddy Nalla
 
 ## Contributing
 

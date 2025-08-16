@@ -57,11 +57,11 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="pt-16">
-        {/* Hero Section */}
+        
         <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-white to-white dark:from-black dark:via-black dark:to-black">
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Get in <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Touch</span>
+              Get in <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">Touch</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Have questions about DentiMap? We're here to help. Reach out to our team for support, 
@@ -73,7 +73,7 @@ const Contact = () => {
         <div className="py-5 px-4 sm:px-6 lg:px-8 dark:bg-black">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-12">
-              {/* Contact Information */}
+              
               <div className="lg:col-span-1 space-y-8">
                 <div>
                   <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
@@ -92,7 +92,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Quick Stats */}
+                
                 <Card className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 border-0">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-2">
@@ -108,18 +108,18 @@ const Contact = () => {
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-sm">Phone Support</span>
-                        <span className="text-sm font-semibold text-green-600">24/7</span>
+                        <span className="text-sm font-semibold text-purple-600">10:00 am - 4:00 pm</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-sm">AI Chat</span>
-                        <span className="text-sm font-semibold text-purple-600">Instant</span>
+                        <span className="text-sm font-semibold text-green-600">Instant</span>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
               </div>
 
-              {/* Contact Form */}
+              
               <div className="lg:col-span-2">
                 <Card className="border-0 shadow-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
                   <CardHeader>
@@ -188,7 +188,7 @@ const Contact = () => {
                       <Button 
                         type="submit" 
                         size="lg" 
-                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white h-12 text-lg"
+                        className="w-full bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white h-12 text-lg"
                       >
                         <Send className="mr-2 h-5 w-5" />
                         Send Message

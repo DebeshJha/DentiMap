@@ -8,7 +8,6 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <img 
@@ -16,7 +15,7 @@ const Footer = () => {
                 alt="DentiMap Logo" 
                 className="h-8 w-8"
               />
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 DentiMap
               </span>
             </Link>
@@ -38,18 +37,16 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li><span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Live AI Model</span></li>
               <li><span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Upload & Analyze</span></li>
               <li><span className="text-gray-300 hover:text-white transition-colors cursor-pointer">AI Chat Consultation</span></li>
-              <li><span className="text-gray-300 hover:text-white transition-colors cursor-pointer">Real-time Monitoring</span></li>
             </ul>
           </div>
 
-          {/* Contact */}
+          
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-3">
@@ -70,14 +67,14 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center cursor-not-allowed">
             <p className="text-gray-400 text-sm">
               © 2025 DentiMap. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+            <div className="flex space-x-6 mt-4 md:mt-0 cursor-help">
+              <a className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+              <a className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+              <a className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
             </div>
           </div>
         </div>
