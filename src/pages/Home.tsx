@@ -45,7 +45,7 @@ const Home = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-white/30 text-white hover:text-black hover:bg-white hover:border-white px-8 py-4 text-lg bg-transparent backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-black hover:bg-transparent hover:bg-blue-500 dark:text-white dark:border-white hover:dark:text-black text-black hover:text-black dark:hover:bg-white hover:border-white px-8 py-4 text-lg bg-transparent backdrop-blur-sm transition-all duration-300"
               >
                 Learn More
                 <ArrowRight className="ml-2 h-5 w-5" />
