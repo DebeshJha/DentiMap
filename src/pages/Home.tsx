@@ -1,6 +1,4 @@
-
 import { ArrowRight, Scan, Brain, Zap } from "lucide-react";
-import Bounce from "../asserts/bounce.png";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
