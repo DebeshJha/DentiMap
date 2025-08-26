@@ -8,12 +8,11 @@ DentAI Vision is a cutting-edge platform that combines dental healthcare with ar
 
 ## Features
 
-- 🦷 AI-powered dental health assistant (Denti Jha)
+- 🦷 AI-powered dental image analysis
 - 💻 Modern, responsive user interface
-- 🔒 Secure authentication system (optional for chat)
-- 📊 Real-time chat responses
+- 🔒 Secure authentication system
+- 📊 Real-time diagnostic results
 - 📱 Cross-platform compatibility
-- 🤖 Frontend-only AI chat (no backend required)
 
 ## Tech Stack
 
@@ -24,14 +23,9 @@ DentAI Vision is a cutting-edge platform that combines dental healthcare with ar
   - Shadcn UI Components
 
 - **Backend:**
-  - SpringBoot (Authentication & User Management)
+  - SpringBoot/Python(API Services)
+  - Machine Learning Model
   - RESTful API Architecture
-  - MySQL Database
-
-- **AI Integration:**
-  - DeepInfra API (Meta-Llama-3-8B-Instruct)
-  - Frontend-only chat service
-  - No backend authentication required for chat
 
 ## Getting Started
 
@@ -60,16 +54,6 @@ npm run dev
 ### Environment Variables
 
 Create a `.env` file in the root directory:
-
-```env
-# DeepInfra AI API Configuration
-VITE_DEEPINFRA_API_KEY=your_deepinfra_api_key_here
-VITE_DEEPINFRA_API_URL=https://api.deepinfra.com/v1/openai/chat/completions
-VITE_DEEPINFRA_MODEL=meta-llama/Meta-Llama-3-8B-Instruct
-
-# Backend API Configuration (optional)
-VITE_BACKEND_API_URL=http://localhost:8080
-```
 
 
 
