@@ -1,5 +1,10 @@
-
-import { Camera, Upload, MessageCircle, Brain, Zap, SearchCheck  } from "lucide-react";
+import { FaVideo } from "react-icons/fa";
+import { FiUpload } from "react-icons/fi";
+import { CiChat1 } from "react-icons/ci";
+import { LuBrainCircuit } from "react-icons/lu";
+import { IoSync } from "react-icons/io5";
+import { LuSearchCheck } from "react-icons/lu";
+import { IoIosCamera } from "react-icons/io";
 import Test from "../asserts/Test.png";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -8,21 +13,21 @@ import { Button } from "@/components/ui/button";
 const Services = () => {
   const services = [
     {
-      icon: Camera,
+      icon: FaVideo,
       title: "Live AI Model",
       description: "Real-time dental analysis using advanced microcamera technology connected to our AI system.",
       features: ["Continuous monitoring", "Instant diagnosis", "Real-time alerts"],
       gradient: "from-blue-500 to-cyan-500"
     },
     {
-      icon: Upload,
+      icon: FiUpload,
       title: "Upload & Analyze",
       description: "Upload your dental scans and get comprehensive AI-powered analysis and diagnosis.",
       features: ["High-accuracy scanning", "Detailed reports", "Multiple format support", "Quick results"],
       gradient: "from-purple-500 to-pink-500"
     },
     {
-      icon: MessageCircle,
+      icon: CiChat1,
       title: "AI Chat Consultation",
       description: "Discuss your dental concerns with our AI assistant for personalized advice and guidance.",
       features: ["24/7 availability", "Personalized responses", "Treatment suggestions", "Follow-up care"],
@@ -45,7 +50,7 @@ const Services = () => {
       </div>
 
       
-      <div className="py-20 px-4 sm:px-6 lg:px-8 dark:bg-black">
+              <div className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -78,7 +83,7 @@ const Services = () => {
       </div>
 
       
-      <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20">
+      <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-white to-white dark:from-black dark:to-black">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -91,22 +96,22 @@ const Services = () => {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <Brain className="h-12 w-12 text-blue-600 mx-auto mb-3" />
+                  <LuBrainCircuit className="h-12 w-12 text-blue-600 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">Deep Learning</h3>
                   <p className="text-sm text-muted-foreground">Advanced neural networks for pattern recognition</p>
                 </div>
                 <div className="text-center">
-                  <Zap className="h-12 w-12 text-purple-600 mx-auto mb-3" />
+                  <IoSync className="h-12 w-12 text-purple-600 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">Real-time Processing</h3>
                   <p className="text-sm text-muted-foreground">Instant analysis and immediate results</p>
                 </div>
                 <div className="text-center">
-                  <SearchCheck className="h-12 w-12 text-green-600 mx-auto mb-3" />
+                  <LuSearchCheck className="h-12 w-12 text-green-600 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2"> Smart Detection</h3>
                   <p className="text-sm text-muted-foreground">Trained to detect early signs of dental disease</p>
                 </div>
                 <div className="text-center">
-                  <Camera className="h-12 w-12 text-orange-600 mx-auto mb-3" />
+                  <IoIosCamera className="h-12 w-12 text-orange-600 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">HD Imaging</h3>
                   <p className="text-sm text-muted-foreground">Crystal clear microcamera technology</p>
                 </div>

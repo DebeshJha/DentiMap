@@ -157,9 +157,9 @@ const ForgotPasswordOTP: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white px-4">
+    <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="max-w-md w-full space-y-8 text-center">
-        <h2 className="text-2xl font-bold text-gray-900">Enter the 5-digit OTP</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Enter the 5-digit OTP</h2>
         <p className="text-sm text-gray-600">We've sent it to {email}</p>
 
         {message && (

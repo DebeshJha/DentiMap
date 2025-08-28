@@ -172,9 +172,9 @@ const OTP: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-      <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-md text-center">
-        <h2 className="text-2xl font-bold mb-2 text-black">Email Verification</h2>
+    <div className="min-h-screen bg-background flex items-center justify-center px-4">
+      <div className="bg-card shadow-md rounded-lg p-8 w-full max-w-md text-center">
+                  <h2 className="text-2xl font-bold mb-2 text-foreground">Email Verification</h2>
         <p className="mb-6 text-gray-600">
           Enter the 5-digit verification code that was sent to your Email.
         </p>

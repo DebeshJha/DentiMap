@@ -139,7 +139,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 w-96 h-[600px]">
-      <Card className="h-full bg-white dark:bg-gray-900 border-0 shadow-2xl rounded-2xl overflow-hidden">
+              <Card className="h-full bg-card border-0 shadow-2xl rounded-2xl overflow-hidden">
         
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 text-white">
           <div className="flex items-center justify-between">
