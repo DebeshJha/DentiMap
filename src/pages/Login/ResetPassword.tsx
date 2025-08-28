@@ -117,9 +117,9 @@ const ResetPassword: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white px-4">
+    <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="max-w-md w-full space-y-8 text-center">
-        <h2 className="text-3xl font-bold text-gray-900">Reset Your Password</h2>
+                  <h2 className="text-3xl font-bold text-foreground">Reset Your Password</h2>
         <p className="text-sm text-gray-600">Enter your new password below</p>
 
         {message && (

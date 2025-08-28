@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, MessageCircle, Clock } from "lucide-react";
+import { LuMessageCircleMore } from "react-icons/lu";
+import { IoIosSend } from "react-icons/io";
+import { IoIosMail } from "react-icons/io";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoLocation } from "react-icons/io5";
+import { CiClock2 } from "react-icons/ci";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -35,19 +40,19 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: Mail,
+      icon: IoIosMail,
       title: "Email Us",
       contact: "dentimap527@gmail.com",
       gradient: "from-blue-500 to-cyan-500"
     },
     {
-      icon: Phone,
+      icon: FaPhoneAlt,
       title: "Call Us",
       contact: "+1 605 202 7777",
       gradient: "from-purple-500 to-pink-500"
     },
     {
-      icon: MapPin,
+      icon: IoLocation,
       title: "Visit Us",
       contact: "414 E Clark St, Vermillion, SD-57069",
       gradient: "from-green-500 to-teal-500"
@@ -70,7 +75,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="py-5 px-4 sm:px-6 lg:px-8 dark:bg-black">
+        <div className="py-5 px-4 sm:px-6 lg:px-8 bg-background dark:bg-black">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-12">
               
@@ -81,7 +86,7 @@ const Contact = () => {
                     {contactInfo.map((info, index) => (
                       <div key={index} className="flex items-start space-x-4">
                         <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${info.gradient} flex items-center justify-center flex-shrink-0`}>
-                          <info.icon className="h-6 w-6 text-white" />
+                          <info.icon className="h-8 w-8 text-white" />
                         </div>
                         <div>
                           <h3 className="font-semibold mb-1">{info.title}</h3>
@@ -96,7 +101,7 @@ const Contact = () => {
                 <Card className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 border-0">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-2">
-                      <Clock className="h-5 w-5 text-blue-600" />
+                      <CiClock2 className="h-6 w-6 text-blue-600" />
                       <span>Response Time</span>
                     </CardTitle>
                   </CardHeader>
@@ -121,10 +126,10 @@ const Contact = () => {
 
               
               <div className="lg:col-span-2">
-                <Card className="border-0 shadow-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+                <Card className="border-0 shadow-2xl bg-card/80 backdrop-blur-sm">
                   <CardHeader>
                     <CardTitle className="text-2xl flex items-center space-x-2">
-                      <MessageCircle className="h-6 w-6 text-blue-600" />
+                      <LuMessageCircleMore className="h-6 w-6 text-blue-600" />
                       <span>Send us a Message</span>
                     </CardTitle>
                   </CardHeader>
@@ -190,7 +195,7 @@ const Contact = () => {
                         size="lg" 
                         className="w-full bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white h-12 text-lg"
                       >
-                        <Send className="mr-2 h-5 w-5" />
+                        <IoIosSend className="mr-2 h-5 w-5" />
                         Send Message
                       </Button>
                     </form>

@@ -126,9 +126,9 @@ const LoginPage = () => {
   return (
     <div className="flex min-h-screen">
       {/* Left Side of the Form ra pilla bacha*/}
-      <div className="flex-1 flex items-center justify-center bg-white px-6 md:px-12 text-black">
+              <div className="flex-1 flex items-center justify-center bg-background px-6 md:px-12 text-foreground">
         <div className="w-full max-w-md space-y-6">
-          <h2 className="text-3xl font-bold text-gray-900">Welcome back</h2>
+                      <h2 className="text-3xl font-bold text-foreground">Welcome back</h2>
           <p className="text-sm text-gray-600">Please enter your details</p>
 
           {error && (

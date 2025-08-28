@@ -120,9 +120,9 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white px-6 md:px-12 text-black pt-16">
+            <div className="min-h-screen flex items-center justify-center bg-background px-6 md:px-12 text-foreground pt-16">
       <div className="w-full max-w-md space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Create your account</h2>
+                  <h2 className="text-3xl font-bold text-foreground">Create your account</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* First Name bro */}
