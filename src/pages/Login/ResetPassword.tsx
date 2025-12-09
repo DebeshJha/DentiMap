@@ -68,7 +68,7 @@ const ResetPassword: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8080/api/auth/reset-password', {
+      const response = await fetch('https://map.paninsight.org/api/auth/reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

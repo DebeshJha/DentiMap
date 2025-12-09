@@ -19,6 +19,7 @@ import ForgotPassword from "./pages/Login/ForgotPassword";
 import ForgotPasswordOTP from "./pages/Login/ForgotPasswordOTP";
 import ResetPassword from "./pages/Login/ResetPassword";
 import ChatBot from "./pages/ChatBot";
+import UploadScan from "./pages/UploadScan";
 import { useState, useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -61,6 +62,7 @@ const AppContent = () => {
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
         <Route path="/forgot-password-otp" element={<ForgotPasswordOTP/>}/>
         <Route path="/reset-password" element={<ResetPassword/>}/>
+        <Route path="/upload-scan" element={<UploadScan/>}/>
       </Routes>
       
       {!isLoginPage(location.pathname) && (

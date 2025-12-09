@@ -64,7 +64,7 @@ const ForgotPasswordOTP: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8080/api/auth/verify-reset-otp', {
+      const response = await fetch('https://map.paninsight.org/api/auth/verify-reset-otp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -127,7 +127,7 @@ const ForgotPasswordOTP: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8080/api/auth/forgot-password', {
+      const response = await fetch('https://map.paninsight.org/api/auth/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

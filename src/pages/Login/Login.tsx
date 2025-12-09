@@ -34,7 +34,7 @@ const LoginPage = () => {
   const handleOAuth2Success = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:8080/api/auth/oauth2-success", {
+      const response = await fetch("https://map.paninsight.org/api/auth/oauth2-success", {
         method: "GET",
         credentials: "include"
       });
@@ -82,7 +82,7 @@ const LoginPage = () => {
     try {
       console.log("Attempting login for:", email);
       
-      const response = await fetch("http://localhost:8080/api/auth/login", {
+      const response = await fetch("https://map.paninsight.org/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -120,7 +120,7 @@ const LoginPage = () => {
 
   const handleGoogleLogin = () => {
     
-    window.location.href = "http://localhost:8080/oauth2/authorization/google";
+            window.location.href = "https://map.paninsight.org/oauth2/authorization/google";
   };
 
   return (

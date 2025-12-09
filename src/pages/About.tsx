@@ -30,10 +30,10 @@ const About = () => {
       role: "Back-end, API design & Orchestration",
       college:"Graduate Student",
       image:Swarnaone,
-      description: "Manages backend services, API development, and model workflow.",
+      description: "Built responsive UIs with React & Tailwind; developed backend with Spring Boot.",
       social: {
         github: "https://github.com/Swarna7414",
-        linkedin: "https://www.linkedin.com/in/swanra-sai-sankar-000797191/",
+        linkedin: "https://www.linkedin.com/in/swarna-sai-sankar-a1084a203/",
       }
     }
     ,
@@ -42,7 +42,7 @@ const About = () => {
       role: "Full Stack Developer",
       college:"Undergraduate Student",
       image: harshith,
-      description: "Built responsive UIs with React & Tailwind; developed backend with Spring Boot.",
+      description: "Manages backend services, API development & DevOps, and model workflow.",
       social: {
         github: "https://github.com/HarshithReddy01",
         linkedin: "https://www.linkedin.com/in/harshith-reddy-nalla-6005012ab/",
@@ -56,7 +56,7 @@ const About = () => {
       <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-white to-white dark:from-black dark:via-black dark:to-black">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Meet Our <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">Team</span>
+            Meet Our Team
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Passionate innovators dedicated to revolutionizing dental care through artificial intelligence and cutting-edge technology.
@@ -76,7 +76,7 @@ const About = () => {
                     <img
                       src={TechinalLead}
                       alt={"DebashJha"}
-                      className="w-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
@@ -112,7 +112,7 @@ const About = () => {
                         <img
                           src={member.image}
                           alt={member.name}
-                          className="w-full h-48 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-48 object-cover object-top"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         
@@ -139,12 +139,11 @@ const About = () => {
               </div>
 
               <div className="hidden lg:block mt-20">
-                <h1 className="font-bold text-4xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Who are we ?</h1>
+                <h1 className="text-4xl font-semibold">Who are we ?</h1>
                 
-                <p className="text-justify font-semibold text-md mt-6">We’re students at the University of South Dakota who created this website to make helpful technology freely accessible to everyone. 
-                  Our goal is to improve AI in healthcare by building practical, research-driven tools. By combining our technical skills with insights from the 
-                  medical field, we aim to develop solutions that support doctors, researchers, and patients alike,  making advanced technology more human-centered 
-                  and accessible.</p>
+                <p className="text-justify text-md mt-6">We're  from  University of South Dakota who built this site to make useful technology for anyone to access. Our aim is to enhance AI in healthcare by building practical, 
+                  research-driven tools. In the process, we merge our technical capabilities with insights from the medical sphere to come up with solutions that can actually support doctors, researchers, and patients alike, making advanced technology 
+                  more human-centered and available.</p>
               </div>
 
             </div>
@@ -155,12 +154,12 @@ const About = () => {
       
       <div className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Our <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">Mission</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Mission</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-12">
-            At DentiMap, we're committed to transforming dental healthcare through innovative AI technology. 
-            Our mission is to make advanced dental diagnostics accessible, accurate, and immediate for everyone. 
-            By combining cutting-edge machine learning with intuitive design, we're creating tools that empower 
-            both patients and dental professionals to achieve better oral health outcomes.
+            At the University of South Dakota, we’re committed to transforming healthcare through innovative AI technology. 
+            Our mission is to make advanced diagnostics more accessible, accurate, and efficient for everyone. By combining 
+            cutting-edge machine learning with intuitive design, we’re developing tools that empower both patients and healthcare 
+            professionals to improve health outcomes and deliver smarter, faster care.
           </p>
         </div>
       </div>
@@ -179,7 +178,7 @@ const About = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-white"><FaHeartCircleCheck/></span>
               </div>
               <h3 className="text-xl font-bold mb-4">Patient-Centered</h3>
@@ -188,7 +187,7 @@ const About = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-white"><TbStarFilled/></span>
               </div>
               <h3 className="text-xl font-bold mb-4">Excellence</h3>

@@ -50,7 +50,7 @@ const LearnMore = () => {
               <Card className="text-center">
                 <CardHeader>
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Camera className="h-6 w-6 text-blue-600" />
+                    <Camera className="h-6 w-6 dark:text-blue-600" />
                   </div>
                   <CardTitle>Advanced Imaging</CardTitle>
                 </CardHeader>
@@ -64,7 +64,7 @@ const LearnMore = () => {
               <Card className="text-center">
                 <CardHeader>
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Brain className="h-6 w-6 text-purple-600" />
+                    <Brain className="h-6 w-6 dark:text-purple-600" />
                   </div>
                   <CardTitle>AI Analysis</CardTitle>
                 </CardHeader>
@@ -78,7 +78,7 @@ const LearnMore = () => {
               <Card className="text-center">
                 <CardHeader>
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Zap className="h-6 w-6 text-green-600" />
+                    <Zap className="h-6 w-6 dark:text-green-600" />
                   </div>
                   <CardTitle>Real-time Results</CardTitle>
                 </CardHeader>
@@ -181,7 +181,7 @@ const LearnMore = () => {
                       Instant anomaly detection
                     </li>
                     <li className="flex items-center gap-2">
-                      <ChevronRight className="h-4 w-4 text-blue-500" />
+                      <ChevronRight className="h-4 w-4 dark:text-blue-500" />
                       Automated image capture
                     </li>
                   </ul>
@@ -331,7 +331,7 @@ const LearnMore = () => {
             <div className="space-y-6 md:space-y-8 px-4 md:px-0">
               <div className="flex items-start gap-4 md:gap-6">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-blue-600 font-bold text-sm md:text-base"><ImagePlay/></span>
+                  <span className="dark:text-blue-600 font-bold text-sm md:text-base"><ImagePlay/></span>
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-semibold mb-2">Image Capture</h3>
@@ -344,7 +344,7 @@ const LearnMore = () => {
               
               <div className="flex items-start gap-4 md:gap-6">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-purple-600 font-bold text-sm md:text-base"><Loader/></span>
+                  <span className="dark:text-purple-600 font-bold text-sm md:text-base"><Loader/></span>
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-semibold mb-2">AI Analysis</h3>
@@ -357,7 +357,7 @@ const LearnMore = () => {
               
               <div className="flex items-start gap-4 md:gap-6">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-green-600 font-bold text-sm md:text-base"><ClipboardPlus/></span>
+                  <span className="dark:text-green-600 font-bold text-sm md:text-base"><ClipboardPlus/></span>
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-semibold mb-2">Diagnostic Report</h3>
@@ -370,7 +370,7 @@ const LearnMore = () => {
               
               <div className="flex items-start gap-4 md:gap-6">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-orange-600 font-bold text-sm md:text-base"><UserPlus/></span>
+                  <span className="dark:text-orange-600 font-bold text-sm md:text-base"><UserPlus/></span>
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-semibold mb-2">Action & Follow-up</h3>
@@ -396,21 +396,21 @@ const LearnMore = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Zap className="h-5 w-5 text-blue-500" />
+                    <Zap className="h-5 w-5 dark:text-blue-500" />
                     For Healthcare Providers
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex items-start gap-2">
-                    <ChevronRight className="h-4 w-4 text-blue-500 mt-1" />
+                    <ChevronRight className="h-4 w-4 dark:text-blue-500 mt-1" />
                     <span>Improved diagnostic accuracy</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <ChevronRight className="h-4 w-4 text-blue-500 mt-1" />
+                    <ChevronRight className="h-4 w-4 dark:text-blue-500 mt-1" />
                     <span>Reduced examination time</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <ChevronRight className="h-4 w-4 text-blue-500 mt-1" />
+                    <ChevronRight className="h-4 w-4 dark:text-blue-500 mt-1" />
                     <span>Enhanced patient communication</span>
                   </div>
                   <div className="flex items-start gap-2">

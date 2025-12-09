@@ -37,7 +37,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   useEffect(() => {
     const checkAuthStatus = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/auth/check-auth', {
+        const response = await fetch('https://map.paninsight.org/api/auth/check-auth', {
           method: 'GET',
           credentials: 'include'
         });
@@ -85,7 +85,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const logout = () => {
     setUser(null);
     localStorage.removeItem('user');
-    fetch('http://localhost:8080/api/auth/logout', {
+    fetch('https://map.paninsight.org/api/auth/logout', {
       method: 'POST',
       credentials: 'include'
     }).catch(error => {

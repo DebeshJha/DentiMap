@@ -4,7 +4,7 @@ import path from "path";
 
 
 export default defineConfig(({ mode }) => ({
-  base:'/DentiMap/',
+  base: '/DentiMap/',
   server: {
     host: "::",
     port: 3000,
