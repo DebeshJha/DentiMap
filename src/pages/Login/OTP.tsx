@@ -43,7 +43,7 @@ const OTP: React.FC = () => {
     
     try {
       console.log("Resending OTP to:", userdata.email);
-      const response = await fetch("http://localhost:8080/api/auth/resend-registration-otp", {
+      const response = await fetch("https://map.paninsight.org/api/auth/resend-registration-otp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -127,7 +127,7 @@ const OTP: React.FC = () => {
     setIsLoading(true);
 
     try{
-        const response = await fetch("http://localhost:8080/api/auth/verify-registration-otp",{
+        const response = await fetch("https://map.paninsight.org/api/auth/verify-registration-otp",{
             method:"POST",
             headers:{
                 "Content-Type": "application/json"

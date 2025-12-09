@@ -1,6 +1,6 @@
 {
   "name": "DentiMap",
-  "homepage": "https://DebeshJha.github.io/DentiMap/",
+  "homepage": "https://DebeshJha.github.io/DentiMap",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
+    "build:prod": "vite build --mode production",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -55,6 +56,7 @@
     "dayjs": "^1.11.13",
     "embla-carousel-react": "^8.3.0",
     "input-otp": "^1.2.4",
+    "jspdf": "^3.0.4",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",

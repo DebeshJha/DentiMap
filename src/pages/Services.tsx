@@ -8,10 +8,18 @@ import { IoIosCamera } from "react-icons/io";
 import Test from "../asserts/Test.png";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 
 const Services = () => {
   const services = [
+    {
+      icon: FiUpload,
+      title: "Upload & Analyze",
+      description: "Upload your dental scans and get comprehensive AI-powered analysis and diagnosis.",
+      features: ["High-accuracy scanning", "Detailed reports", "Multiple format support", "Quick results"],
+      gradient: "from-blue-500 to-cyan-500"
+    },
     {
       icon: FaVideo,
       title: "Live AI Model",
@@ -20,18 +28,11 @@ const Services = () => {
       gradient: "from-blue-500 to-cyan-500"
     },
     {
-      icon: FiUpload,
-      title: "Upload & Analyze",
-      description: "Upload your dental scans and get comprehensive AI-powered analysis and diagnosis.",
-      features: ["High-accuracy scanning", "Detailed reports", "Multiple format support", "Quick results"],
-      gradient: "from-purple-500 to-pink-500"
-    },
-    {
       icon: CiChat1,
       title: "AI Chat Consultation",
       description: "Discuss your dental concerns with our AI assistant for personalized advice and guidance.",
       features: ["24/7 availability", "Personalized responses", "Treatment suggestions", "Follow-up care"],
-      gradient: "from-green-500 to-teal-500"
+      gradient: "from-blue-500 to-cyan-500"
     }
   ];
 
@@ -41,16 +42,15 @@ const Services = () => {
       <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-white to-white dark:from-black dark:via-black dark:to-black">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Our <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">AI Services</span>
+            Our <span>AI Services</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Experience the future of dental care with our cutting-edge AI-powered services designed to revolutionize dental diagnostics and patient care.
+            Discover a simpler, smarter way to care for your teeth. Our AI-powered tools help dentists quickly spot dental issues
           </p>
         </div>
       </div>
-
       
-              <div className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -72,9 +72,11 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className={`w-full bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white border-0`}>
-                    Get Started
-                  </Button>
+                  <Link to={service.title === "Upload & Analyze" ? "/upload-scan" : "#"}>
+                    <Button className={`w-full bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white border-0`}>
+                      Get Started
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -88,7 +90,7 @@ const Services = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Powered by Advanced <span className="text-blue-600">AI Technology</span>
+                Powered by Advanced AI Technology
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Our DentiMap system leverages state-of-the-art machine learning algorithms and computer vision 
@@ -96,22 +98,22 @@ const Services = () => {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <LuBrainCircuit className="h-12 w-12 text-blue-600 mx-auto mb-3" />
+                  <LuBrainCircuit className="h-12 w-12 dark:text-blue-600 text-gray-700 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">Deep Learning</h3>
                   <p className="text-sm text-muted-foreground">Advanced neural networks for pattern recognition</p>
                 </div>
                 <div className="text-center">
-                  <IoSync className="h-12 w-12 text-purple-600 mx-auto mb-3" />
+                  <IoSync className="h-12 w-12 dark:text-blue-600 text-gray-700 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">Real-time Processing</h3>
                   <p className="text-sm text-muted-foreground">Instant analysis and immediate results</p>
                 </div>
                 <div className="text-center">
-                  <LuSearchCheck className="h-12 w-12 text-green-600 mx-auto mb-3" />
+                  <LuSearchCheck className="h-12 w-12 dark:text-blue-600 text-gray-700 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2"> Smart Detection</h3>
                   <p className="text-sm text-muted-foreground">Trained to detect early signs of dental disease</p>
                 </div>
                 <div className="text-center">
-                  <IoIosCamera className="h-12 w-12 text-orange-600 mx-auto mb-3" />
+                  <IoIosCamera className="h-12 w-12 dark:text-blue-600 text-gray-700 mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">HD Imaging</h3>
                   <p className="text-sm text-muted-foreground">Crystal clear microcamera technology</p>
                 </div>

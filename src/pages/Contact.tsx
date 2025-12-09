@@ -1,23 +1,18 @@
 import { useState } from "react";
-import { LuMessageCircleMore } from "react-icons/lu";
-import { IoIosSend } from "react-icons/io";
-import { IoIosMail } from "react-icons/io";
-import { FaPhoneAlt } from "react-icons/fa";
-import { IoLocation } from "react-icons/io5";
-import { CiClock2 } from "react-icons/ci";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import Footer from "@/components/Footer";
+import { Mail, Phone, MapPin, Video } from "lucide-react";
+import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram, FaMedium } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    subject: "",
     message: ""
   });
   const { toast } = useToast();
@@ -25,10 +20,10 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
+      title: "Got it!",
+      description: "We'll be in touch soon.",
     });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setFormData({ firstName: "", lastName: "", email: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -38,169 +33,139 @@ const Contact = () => {
     }));
   };
 
-  const contactInfo = [
-    {
-      icon: IoIosMail,
-      title: "Email Us",
-      contact: "dentimap527@gmail.com",
-      gradient: "from-blue-500 to-cyan-500"
-    },
-    {
-      icon: FaPhoneAlt,
-      title: "Call Us",
-      contact: "+1 605 202 7777",
-      gradient: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: IoLocation,
-      title: "Visit Us",
-      contact: "414 E Clark St, Vermillion, SD-57069",
-      gradient: "from-green-500 to-teal-500"
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       <div className="pt-16">
-        
-        <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-white to-white dark:from-black dark:via-black dark:to-black">
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Get in <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">Touch</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Have questions about DentiMap? We're here to help. Reach out to our team for support, 
-              partnerships, or to learn more about our innovative dental technology.
-            </p>
-          </div>
-        </div>
-
-        <div className="py-5 px-4 sm:px-6 lg:px-8 bg-background dark:bg-black">
+        <div className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-3 gap-12">
-              
-              <div className="lg:col-span-1 space-y-8">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+              {/* Left Side - Contact Me Section */}
+              <div className="relative">
                 <div>
-                  <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-                  <div className="space-y-6">
-                    {contactInfo.map((info, index) => (
-                      <div key={index} className="flex items-start space-x-4">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${info.gradient} flex items-center justify-center flex-shrink-0`}>
-                          <info.icon className="h-8 w-8 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1">{info.title}</h3>
-                          <p className="text-sm font-medium">{info.contact}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                  <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-16 text-gray-900 dark:text-gray-100">
+                    Contact us
+                  </h1>
+                  
+                  {/* Contact Information */}
+                  <div className="space-y-10 mb-12">
+                    {/* Email */}
+                    <div className="flex items-start gap-6">
+                      <Mail className="h-9 w-9 text-gray-900 dark:text-gray-100 mt-1 flex-shrink-0" />
+                      <a 
+                        href="mailto:dentimap527@gmail.com" 
+                        className="text-xl md:text-2xl text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                      >
+                        dentimap527@gmail.com
+                      </a>
+                    </div>
 
-                
-                <Card className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 border-0">
-                  <CardHeader>
-                    <CardTitle className="flex items-center space-x-2">
-                      <CiClock2 className="h-6 w-6 text-blue-600" />
-                      <span>Response Time</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Email Response</span>
-                        <span className="text-sm font-semibold text-blue-600">&lt; 2 hours</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">Phone Support</span>
-                        <span className="text-sm font-semibold text-purple-600">10:00 am - 4:00 pm</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm">AI Chat</span>
-                        <span className="text-sm font-semibold text-green-600">Instant</span>
+                    {/* Phone */}
+                    <div className="flex items-start gap-6">
+                      <Phone className="h-9 w-9 text-gray-900 dark:text-gray-100 mt-1 flex-shrink-0" />
+                      <a 
+                        href="tel:+16052027777" 
+                        className="text-xl md:text-2xl text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                      >
+                        +1 605 202 7777
+                      </a>
+                    </div>
+
+                    {/* Address */}
+                    <div className="flex items-start gap-6">
+                      <MapPin className="h-9 w-9 text-gray-900 dark:text-gray-100 mt-1 flex-shrink-0" />
+                      <div className="text-xl md:text-2xl text-gray-900 dark:text-gray-100">
+                        <div>Department of Computer Science,</div>
+                        <div>414 E. Clark Street,</div>
+                        <div>Vermillion, SD 57069</div>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+
+                  {/* Let's Meet Button */}
+                  <Button 
+                    className="w-full md:w-full md:max-w-lg bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold text-2xl px-12 py-6 rounded-lg mb-12 transition-all shadow-md hover:shadow-lg"
+                    onClick={() => {
+                      // You can add video call functionality here
+                      toast({
+                        title: "Let's Meet!",
+                        description: "We'll schedule a meeting soon.",
+                      });
+                    }}
+                  >
+                    Let's Meet
+                    
+                  </Button>
+                </div>
               </div>
 
-              
-              <div className="lg:col-span-2">
-                <Card className="border-0 shadow-2xl bg-card/80 backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle className="text-2xl flex items-center space-x-2">
-                      <LuMessageCircleMore className="h-6 w-6 text-blue-600" />
-                      <span>Send us a Message</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="name" className="text-sm font-medium">Full Name</Label>
-                          <Input
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            placeholder="Enter your full name"
-                            required
-                            className="h-12 border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 transition-colors"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email" className="text-sm font-medium">Email Address</Label>
-                          <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Enter your email"
-                            required
-                            className="h-12 border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 transition-colors"
-                          />
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="subject" className="text-sm font-medium">Subject</Label>
-                        <Input
-                          id="subject"
-                          name="subject"
-                          value={formData.subject}
-                          onChange={handleChange}
-                          placeholder="What's this about?"
-                          required
-                          className="h-12 border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 transition-colors"
-                        />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="message" className="text-sm font-medium">Message</Label>
-                        <Textarea
-                          id="message"
-                          name="message"
-                          value={formData.message}
-                          onChange={handleChange}
-                          placeholder="Tell us more about your inquiry..."
-                          required
-                          rows={6}
-                          className="border-2 border-gray-200 dark:border-gray-700 focus:border-blue-500 transition-colors resize-none"
-                        />
-                      </div>
-                      
-                      <Button 
-                        type="submit" 
-                        size="lg" 
-                        className="w-full bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white h-12 text-lg"
-                      >
-                        <IoIosSend className="mr-2 h-5 w-5" />
-                        Send Message
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
+              {/* Right Side - Form Card */}
+              <div className="relative">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 md:p-10 border border-gray-100 dark:border-gray-700">
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="firstName" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        First name<span className="text-red-500 ml-1">*</span>
+                      </Label>
+                      <Input
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required
+                        className="h-12 text-base bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="lastName" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        Last name
+                      </Label>
+                      <Input
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        className="h-12 text-base bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        Email<span className="text-red-500 ml-1">*</span>
+                      </Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}                       required
+                        className="h-12 text-base bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        What can we help you with?
+                      </Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={6}
+                        className="resize-y text-base bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent min-h-[120px]"
+                      />
+                    </div>
+
+                    <Button 
+                      type="submit" 
+                      className="w-full h-12 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-base font-medium rounded-lg transition-colors shadow-md hover:shadow-lg"
+                    >
+                      Submit
+                    </Button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
