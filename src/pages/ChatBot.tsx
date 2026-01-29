@@ -138,44 +138,44 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 w-96 h-[600px]">
+    <div className="fixed bottom-6 right-6 z-50 w-80 h-[500px] max-h-[85vh]">
               <Card className="h-full bg-card border-0 shadow-2xl rounded-2xl overflow-hidden">
         
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 text-white">
+        <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-3 text-white">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                <img src={Bounce} alt="Denti Jha" className="h-6 w-6" />
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                <img src={Bounce} alt="Denti Jha" className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="font-semibold">Denti Jha</h3>
-                <p className="text-sm text-blue-100">Dental Health Assistant</p>
+                <h3 className="font-semibold text-sm">Denti Jha</h3>
+                <p className="text-xs text-blue-100">Dental Health Assistant</p>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-1">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={showHelp}
-                className="text-white hover:bg-white/20"
+                className="text-white hover:bg-white/20 h-7 w-7 p-0"
                 title="Get Help"
               >
-                <HelpCircle className="h-4 w-4" />
+                <HelpCircle className="h-3.5 w-3.5" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={closeChat}
-                className="text-white hover:bg-white/20"
+                className="text-white hover:bg-white/20 h-7 w-7 p-0"
               >
-                <X className="h-4 w-4" />
+                <X className="h-3.5 w-3.5" />
               </Button>
             </div>
           </div>
         </div>
 
         
-        <ScrollArea className="flex-1 h-[400px] p-4">
+        <ScrollArea className="flex-1 h-[320px] p-3">
           <div className="space-y-4">
             {messages.map((message) => (
               <div
@@ -223,7 +223,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         </ScrollArea>
 
         
-        <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+        <div className="p-3 border-t border-gray-200 dark:border-gray-700">
           <div className="flex space-x-2">
             <Input
               ref={inputRef}
@@ -231,23 +231,23 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
               onChange={(e) => setInputMessage(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask me about dental health..."
-              className="flex-1"
+              className="flex-1 text-sm"
               disabled={isLoading}
             />
             <Button
               onClick={sendMessage}
               disabled={!inputMessage.trim() || isLoading}
               size="icon"
-              className="bg-blue-500 hover:bg-blue-600"
+              className="bg-blue-500 hover:bg-blue-600 h-9 w-9"
             >
               {isLoading ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
+                <Loader2 className="h-3.5 w-3.5 animate-spin" />
               ) : (
-                <Send className="h-4 w-4" />
+                <Send className="h-3.5 w-3.5" />
               )}
             </Button>
           </div>
-          <p className="text-xs text-gray-500 mt-2 text-center">
+          <p className="text-xs text-gray-500 mt-1.5 text-center">
             Press Enter to send • Shift+Enter for new line
           </p>
         </div>
