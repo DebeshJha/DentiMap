@@ -65,9 +65,9 @@ const AppContent = () => {
         <Route path="/upload-scan" element={<UploadScan/>}/>
       </Routes>
       
-      {!isLoginPage(location.pathname) && (
+      {!isLoginPage(location.pathname) && !isChatOpen && (
         <div 
-          className="bottom-8 right-5 transform -translate-x-1/2 fixed hidden lg:block cursor-pointer hover:scale-110 transition-transform duration-300"
+          className="bottom-8 right-6 fixed z-40 cursor-pointer hover:scale-110 transition-transform duration-300"
           onClick={openChat}
           title="Chat with DentiJha AI"
         >

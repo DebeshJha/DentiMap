@@ -138,10 +138,10 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 w-80 h-[500px] max-h-[85vh]">
-              <Card className="h-full bg-card border-0 shadow-2xl rounded-2xl overflow-hidden">
+    <div className="fixed bottom-6 right-6 z-50 w-80 h-[500px] max-h-[85vh] max-w-[calc(100vw-3rem)]">
+              <Card className="h-full bg-card border-0 shadow-2xl rounded-2xl overflow-hidden flex flex-col">
         
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-3 text-white">
+        <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-3 text-white flex-shrink-0">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
@@ -175,7 +175,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         </div>
 
         
-        <ScrollArea className="flex-1 h-[320px] p-3">
+        <ScrollArea className="flex-1 min-h-0 p-3">
           <div className="space-y-4">
             {messages.map((message) => (
               <div
@@ -223,7 +223,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, setIsOpen }) => {
         </ScrollArea>
 
         
-        <div className="p-3 border-t border-gray-200 dark:border-gray-700">
+        <div className="p-3 border-t border-gray-200 dark:border-gray-700 flex-shrink-0">
           <div className="flex space-x-2">
             <Input
               ref={inputRef}
