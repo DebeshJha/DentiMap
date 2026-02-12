@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Swarnaone from "../asserts/about/swarnaone.png"
 import TechinalLead from "../asserts/about/Leadimage.png"
 import harshith from "../asserts/about/Harshith.png";
+import dipika from "../asserts/team member.png";
 import { Button } from "@/components/ui/button";
 
 const About = () => {
@@ -48,6 +49,17 @@ const About = () => {
         github: "https://github.com/HarshithReddy01",
         linkedin: "https://www.linkedin.com/in/harshith-reddy-nalla-6005012ab/",
         portfolio: "https://harshithreddy01.github.io/My-Web/",
+      }
+    },
+    {
+      name: "Dipika Ranabhat",
+      role: "ML Ops",
+      college:"Graduate Student",
+      image: dipika,
+      description: "Automation & Pipelines, Infrastructure Management.",
+      social: {
+        github: "",
+        linkedin: "",
       }
     },
   ];
