@@ -39,6 +39,8 @@ const AppContent = () => {
   useEffect(() => {
     if (isLoginPage(location.pathname)) {
       setIsChatOpen(false);
+    } else if (location.pathname.endsWith("/chat")) {
+      setIsChatOpen(true);
     }
   }, [location.pathname]);
 
@@ -63,11 +65,12 @@ const AppContent = () => {
         <Route path="/forgot-password-otp" element={<ForgotPasswordOTP/>}/>
         <Route path="/reset-password" element={<ResetPassword/>}/>
         <Route path="/upload-scan" element={<UploadScan/>}/>
+        <Route path="/chat" element={<Home />} />
       </Routes>
       
-      {!isLoginPage(location.pathname) && (
+      {!isLoginPage(location.pathname) && !isChatOpen && (
         <div 
-          className="bottom-8 right-5 transform -translate-x-1/2 fixed hidden lg:block cursor-pointer hover:scale-110 transition-transform duration-300"
+          className="bottom-8 right-6 fixed z-40 cursor-pointer hover:scale-110 transition-transform duration-300"
           onClick={openChat}
           title="Chat with DentiJha AI"
         >
