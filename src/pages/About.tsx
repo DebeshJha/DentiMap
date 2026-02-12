@@ -1,5 +1,6 @@
 import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
+import { FiGlobe } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import { TbBulb } from "react-icons/tb";
 import { FaHeartCircleCheck } from "react-icons/fa6";
@@ -8,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Swarnaone from "../asserts/about/swarnaone.png"
 import TechinalLead from "../asserts/about/Leadimage.png"
 import harshith from "../asserts/about/Harshith.png";
+import dipika from "../asserts/team member.png";
 import { Button } from "@/components/ui/button";
 
 const About = () => {
@@ -27,7 +29,7 @@ const About = () => {
 
     {
       name: "Sai Sankar Swarna",
-      role: "Back-end, API design & Orchestration",
+      role: "Full Stack Developer",
       college:"Graduate Student",
       image:Swarnaone,
       description: "Built responsive UIs with React & Tailwind; developed backend with Spring Boot.",
@@ -39,13 +41,25 @@ const About = () => {
     ,
     {
       name: "Harshith Reddy Nalla",
-      role: "Full Stack Developer",
+      role: "AI/ML Engineer",
       college:"Undergraduate Student",
       image: harshith,
-      description: "Manages backend services, API development & DevOps, and model workflow.",
+      description: "Model Development, API development, FastAPI, Model Deployment, Hugging Face Spaces and model workflow.",
       social: {
         github: "https://github.com/HarshithReddy01",
         linkedin: "https://www.linkedin.com/in/harshith-reddy-nalla-6005012ab/",
+        portfolio: "https://harshithreddy01.github.io/My-Web/",
+      }
+    },
+    {
+      name: "Dipika Ranabhat",
+      role: "ML Ops",
+      college:"Graduate Student",
+      image: dipika,
+      description: "Automation & Pipelines, Infrastructure Management.",
+      social: {
+        github: "",
+        linkedin: "",
       }
     },
   ];
@@ -95,7 +109,8 @@ const About = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-1">Dr. Debesh Jha</h3>
-                    <p className="text-primary font-medium mb-3">Technical Lead</p>
+                    <p className="text-primary font-medium mb-1">Technical Lead</p>
+                    <p className="text-sm text-muted-foreground mb-3">Assistant Professor (Tenure Track) @USD | Former Sr. Res. Associate</p>
                     <p className="text-sm text-muted-foreground leading-relaxed">AI/ML specialist in medical imaging, recognized among world’s top scientists.</p>
                   </div>
                 </CardContent>
@@ -104,29 +119,35 @@ const About = () => {
 
             
             <div className="lg:col-span-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-1/2">
-                {teamMembers.map((member, index) => (
-                  <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm mt-6 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {teamMembers.slice(0, 2).map((member, index) => (
+                  <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm">
                     <CardContent className="p-0">
-                      <div className="relative overflow-hidden rounded-md">
+                      <div className={`relative overflow-hidden rounded-md ${index === 1 ? "h-72" : "h-48"}`}>
                         <img
                           src={member.image}
                           alt={member.name}
-                          className="w-full h-48 object-cover object-top"
+                          className={`w-full object-cover object-top ${index === 1 ? "h-72" : "h-48"}`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        
-                        
                         <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.github)}}>
-                            <FiGithub className="h-3 w-3 text-white" />
-                          </Button>
-                          <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.linkedin)}}>
-                            <FiLinkedin className="h-3 w-3 text-white" />
-                          </Button>
+                          {member.social.github && (
+                            <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.github)}}>
+                              <FiGithub className="h-3 w-3 text-white" />
+                            </Button>
+                          )}
+                          {member.social.linkedin && (
+                            <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.linkedin)}}>
+                              <FiLinkedin className="h-3 w-3 text-white" />
+                            </Button>
+                          )}
+                          {member.social.portfolio && (
+                            <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.portfolio)}}>
+                              <FiGlobe className="h-3 w-3 text-white" />
+                            </Button>
+                          )}
                         </div>
                       </div>
-                      
                       <div className="p-4">
                         <h3 className="text-lg font-bold mb-1">{member.name}</h3>
                         <p className="text-primary font-medium mb-2 text-sm">{member.role}</p>
@@ -136,16 +157,48 @@ const About = () => {
                     </CardContent>
                   </Card>
                 ))}
+                {/* Dipika card */}
+                {(() => {
+                  const member = teamMembers[2];
+                  return (
+                    <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm">
+                      <CardContent className="p-0">
+                        <div className="relative overflow-hidden rounded-md h-72">
+                          <img src={member.image} alt={member.name} className="w-full h-72 object-cover object-top" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            {member.social.github && (
+                              <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.github)}}>
+                                <FiGithub className="h-3 w-3 text-white" />
+                              </Button>
+                            )}
+                            {member.social.linkedin && (
+                              <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.linkedin)}}>
+                                <FiLinkedin className="h-3 w-3 text-white" />
+                              </Button>
+                            )}
+                          </div>
+                        </div>
+                        <div className="p-4">
+                          <h3 className="text-lg font-bold mb-1">{member.name}</h3>
+                          <p className="text-primary font-medium mb-2 text-sm">{member.role}</p>
+                          <p className="text-xs text-muted-foreground leading-relaxed">{member.college},</p>
+                          <p className="text-xs text-muted-foreground leading-relaxed">{member.description}</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })()}
+                {/* Who are we? - in the open space to the right of Dipika */}
+                <Card className="border-0 bg-card/80 backdrop-blur-sm flex flex-col">
+                  <CardContent className="p-5 flex flex-col justify-center flex-1">
+                    <h2 className="text-xl font-semibold mb-3">Who are we?</h2>
+                    <p className="text-justify text-sm text-muted-foreground leading-relaxed">
+                      We're from University of South Dakota who built this site to make useful technology for anyone to access. Our aim is to enhance AI in healthcare by building practical, research-driven tools. In the process, we merge our technical capabilities with insights from the medical sphere to come up with solutions that can actually support doctors, researchers, and patients alike, making advanced technology more human-centered and available.
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
-
-              <div className="hidden lg:block mt-20">
-                <h1 className="text-4xl font-semibold">Who are we ?</h1>
-                
-                <p className="text-justify text-md mt-6">We're  from  University of South Dakota who built this site to make useful technology for anyone to access. Our aim is to enhance AI in healthcare by building practical, 
-                  research-driven tools. In the process, we merge our technical capabilities with insights from the medical sphere to come up with solutions that can actually support doctors, researchers, and patients alike, making advanced technology 
-                  more human-centered and available.</p>
-              </div>
-
             </div>
           </div>
         </div>

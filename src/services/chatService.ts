@@ -19,7 +19,7 @@ class ChatService {
   private getSystemPrompt(): string {
     return `You are Denti Jha, a dental health assistant. Give SHORT responses.
     
-    Answer in at most 2 short sentences (max 50 words total). 
+    Answer in at most 2 short sentence but for lengthy answers try to summarize and convey the information. 
     Be clear and concise; no lists, no extra fluff. Always end with 'Consult a doctor for medical advice.' 
     Focus only on dental health topics.`;
   }
@@ -77,17 +77,14 @@ class ChatService {
     }
   }
 
-  // Simulated typing effect for better UX
   async sendMessageWithTypingEffect(message: string, conversationHistory: ChatMessage[] = []): Promise<ChatResponse> {
     const response = await this.sendMessage(message, conversationHistory);
     
-    // Add a small delay to simulate typing
     await new Promise(resolve => setTimeout(resolve, 500));
     
     return response;
   }
 
-  // Get a welcome message for new users
   getWelcomeMessage(userName?: string): ChatResponse {
     return {
       message: `Hello ${userName || 'there'}! I'm Denti Jha, your dental health assistant. I'm here to help you with dental health questions, provide guidance on oral care, and answer any concerns you might have. How can I assist you today?`,
@@ -97,7 +94,6 @@ class ChatService {
     };
   }
 
-  
   getHelpMessage(): ChatResponse {
     return {
       message: "I can help you with:\n• Dental hygiene tips\n• Common dental problems\n• Oral care recommendations\n• General dental health questions\n\nJust ask me anything about dental health!",

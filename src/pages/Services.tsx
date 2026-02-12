@@ -72,7 +72,7 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link to={service.title === "Upload & Analyze" ? "/upload-scan" : "#"}>
+                  <Link to={service.title === "Upload & Analyze" ? "/upload-scan" : service.title === "AI Chat Consultation" ? "/chat" : service.title === "Live AI Model" ? "/learn-more?section=technology" : "#"}>
                     <Button className={`w-full bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white border-0`}>
                       Get Started
                     </Button>
