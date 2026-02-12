@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { 
   Brain, 
   Camera, 
@@ -22,9 +23,21 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import LearnMoreSidebar from "@/components/LearnMoreSidebar";
 
+const VALID_SECTIONS = ["overview", "technology", "features", "security", "workflow", "benefits", "integration", "support"];
+
 const LearnMore = () => {
-  const [activeSection, setActiveSection] = useState("overview");
+  const [searchParams] = useSearchParams();
+  const sectionFromUrl = searchParams.get("section");
+  const [activeSection, setActiveSection] = useState(
+    sectionFromUrl && VALID_SECTIONS.includes(sectionFromUrl) ? sectionFromUrl : "overview"
+  );
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (sectionFromUrl && VALID_SECTIONS.includes(sectionFromUrl)) {
+      setActiveSection(sectionFromUrl);
+    }
+  }, [sectionFromUrl]);
 
   const handleSectionChange = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -153,6 +166,14 @@ const LearnMore = () => {
                 </CardContent>
               </Card>
             </div>
+
+            <h3 className="text-xl font-semibold mt-8 mb-3 px-4 md:px-0">Future work</h3>
+            <p className="text-muted-foreground px-4 md:px-0">
+              We are actively expanding our technology stack to support live video analysis, 
+              real-time microcamera streaming, and deeper integration with clinical workflows. 
+              Future developments include enhanced model accuracy, multi-modal imaging support, 
+              and broader deployment options for dental practices.
+            </p>
           </div>
         );
 

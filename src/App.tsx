@@ -39,6 +39,8 @@ const AppContent = () => {
   useEffect(() => {
     if (isLoginPage(location.pathname)) {
       setIsChatOpen(false);
+    } else if (location.pathname.endsWith("/chat")) {
+      setIsChatOpen(true);
     }
   }, [location.pathname]);
 
@@ -63,6 +65,7 @@ const AppContent = () => {
         <Route path="/forgot-password-otp" element={<ForgotPasswordOTP/>}/>
         <Route path="/reset-password" element={<ResetPassword/>}/>
         <Route path="/upload-scan" element={<UploadScan/>}/>
+        <Route path="/chat" element={<Home />} />
       </Routes>
       
       {!isLoginPage(location.pathname) && !isChatOpen && (
