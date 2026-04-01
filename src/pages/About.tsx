@@ -1,253 +1,236 @@
-import { FiGithub } from "react-icons/fi";
-import { FiLinkedin } from "react-icons/fi";
-import { FiGlobe } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiGlobe } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import { TbBulb } from "react-icons/tb";
 import { FaHeartCircleCheck } from "react-icons/fa6";
 import { TbStarFilled } from "react-icons/tb";
 import { Card, CardContent } from "@/components/ui/card";
-import Swarnaone from "../asserts/about/swarnaone.png"
-import TechinalLead from "../asserts/about/Leadimage.png"
-import harshith from "../asserts/about/Harshith.png";
-import dipika from "../asserts/team member.png";
 import { Button } from "@/components/ui/button";
+import Swarnaone from "../asserts/about/swarnaone.png";
+import TechinalLead from "../asserts/about/Leadimage.png";
+import harshith from "../asserts/about/Harshith.png";
+
+const teamMembers = [
+  {
+    name: "Sai Sankar Swarna",
+    role: "Full Stack Developer",
+    college: "Graduate Student",
+    image: Swarnaone,
+    description: "Built responsive UIs with React & Tailwind; developed backend with Spring Boot.",
+    social: {
+      github: "https://github.com/Swarna7414",
+      linkedin: "https://www.linkedin.com/in/swarna-sai-sankar-a1084a203/",
+    },
+  },
+  {
+    name: "Harshith Reddy Nalla",
+    role: "AI/ML Engineer",
+    college: "Undergraduate Student",
+    image: harshith,
+    imagePosition: "object-top",
+    description: "Model development, API development, FastAPI, model deployment, Hugging Face Spaces and model workflow.",
+    social: {
+      github: "https://github.com/HarshithReddy01",
+      linkedin: "https://www.linkedin.com/in/harshith-reddy-nalla-6005012ab/",
+      portfolio: "https://harshithreddy01.github.io/My-Web/",
+    },
+  },
+];
 
 const About = () => {
-
-  const Dgithub=()=>{
-    window.open("https://github.com/DebeshJha","_blank");
-  }
-
-  const Dlinkedin=()=>{
-    window.open("https://www.linkedin.com/in/debesh-jha-ph-d-071462aa/","_blank");
-  }
-
-  const Dtwitter=()=>{
-    window.open("https://x.com/debesh_jha","_blank")
-  }
-  const teamMembers = [
-
-    {
-      name: "Sai Sankar Swarna",
-      role: "Full Stack Developer",
-      college:"Graduate Student",
-      image:Swarnaone,
-      description: "Built responsive UIs with React & Tailwind; developed backend with Spring Boot.",
-      social: {
-        github: "https://github.com/Swarna7414",
-        linkedin: "https://www.linkedin.com/in/swarna-sai-sankar-a1084a203/",
-      }
-    }
-    ,
-    {
-      name: "Harshith Reddy Nalla",
-      role: "AI/ML Engineer",
-      college:"Undergraduate Student",
-      image: harshith,
-      description: "Model Development, API development, FastAPI, Model Deployment, Hugging Face Spaces and model workflow.",
-      social: {
-        github: "https://github.com/HarshithReddy01",
-        linkedin: "https://www.linkedin.com/in/harshith-reddy-nalla-6005012ab/",
-        portfolio: "https://harshithreddy01.github.io/My-Web/",
-      }
-    },
-    {
-      name: "Dipika Ranabhat",
-      role: "ML Ops",
-      college:"Graduate Student",
-      image: dipika,
-      description: "Automation & Pipelines, Infrastructure Management.",
-      social: {
-        github: "",
-        linkedin: "",
-      }
-    },
-  ];
-
   return (
     <div className="min-h-screen pt-16 bg-background">
-      
-      <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-white to-white dark:from-black dark:via-black dark:to-black">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Meet Our Team
+
+      {/* Hero */}
+      <div className="relative pt-24 pb-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-background to-background">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-primary/10 text-primary mb-6">
+            University of South Dakota
+          </span>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Meet the Team Behind <span className="text-primary">DentiMap</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Passionate innovators dedicated to revolutionizing dental care through artificial intelligence and cutting-edge technology.
           </p>
         </div>
       </div>
 
-      
-      <div className="py-15 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-white to-white dark:from-black dark:to-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 py-8">
-            
-            <div className="lg:col-span-6">
-              <Card className="flex flex-col justify-between group hover:shadow-2xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm h-full">
+      {/* Technical Lead */}
+      <div className="pt-8 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold mb-8 text-center text-muted-foreground uppercase tracking-widest text-sm">Technical Lead</h2>
+          <Card className="group hover:shadow-2xl transition-all duration-500 border border-border/50 bg-card/80 backdrop-blur-sm overflow-hidden">
+            <CardContent className="p-0">
+              <div className="flex flex-col md:flex-row">
+                <div className="relative md:w-72 shrink-0 overflow-hidden">
+                  <img
+                    src={TechinalLead}
+                    alt="Dr. Debesh Jha"
+                    className="w-full h-72 md:h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-transparent to-transparent" />
+                </div>
+                <div className="flex flex-col justify-center p-8 flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">Technical Lead</span>
+                  </div>
+                  <h3 className="text-3xl font-bold mb-1">Dr. Debesh Jha</h3>
+                  <p className="text-muted-foreground mb-4 font-medium">
+                    Assistant Professor (Tenure Track) @ USD &middot; Former Sr. Research Associate
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    AI/ML specialist in medical imaging and computational pathology, recognized among the world's top scientists. Dr. Jha leads research at the intersection of deep learning and healthcare, driving DentiMap's core AI vision.
+                  </p>
+                  <div className="flex gap-3">
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      className="w-9 h-9 rounded-full"
+                      onClick={() => window.open("https://github.com/DebeshJha", "_blank")}
+                    >
+                      <FiGithub className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      className="w-9 h-9 rounded-full"
+                      onClick={() => window.open("https://www.linkedin.com/in/debesh-jha-ph-d-071462aa/", "_blank")}
+                    >
+                      <FiLinkedin className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      className="w-9 h-9 rounded-full"
+                      onClick={() => window.open("https://x.com/debesh_jha", "_blank")}
+                    >
+                      <FaXTwitter className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      {/* Team Members */}
+      <div className="py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-sm font-bold mb-8 text-center text-muted-foreground uppercase tracking-widest">Core Team</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {teamMembers.map((member, index) => (
+              <Card
+                key={index}
+                className="group hover:shadow-2xl transition-all duration-500 border border-border/50 bg-card/80 backdrop-blur-sm overflow-hidden"
+              >
                 <CardContent className="p-0">
-                  <div className="relative overflow-hidden rounded-md">
+                  <div className="relative overflow-hidden h-96">
                     <img
-                      src={TechinalLead}
-                      alt={"DebashJha"}
-                      className="w-full object-cover"
+                      src={member.image}
+                      alt={member.name}
+                      className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${member.imagePosition ?? "object-top"}`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
-                    
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Button size="icon" variant="secondary" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={Dgithub}>
-                        <FiGithub className="h-4 w-4 text-blue-500" />
-                      </Button>
-                      <Button size="icon" variant="secondary" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={Dlinkedin}>
-                        <FiLinkedin className="h-4 w-4 text-blue-500" />
-                      </Button>
-                      <Button size="icon" variant="secondary" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={Dtwitter}>
-                        <FaXTwitter className="h-4 w-4 text-blue-500" />
-                      </Button>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {member.social.github && (
+                        <Button
+                          size="icon"
+                          variant="secondary"
+                          className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/40"
+                          onClick={() => window.open(member.social.github, "_blank")}
+                        >
+                          <FiGithub className="h-3.5 w-3.5 text-white" />
+                        </Button>
+                      )}
+                      {member.social.linkedin && (
+                        <Button
+                          size="icon"
+                          variant="secondary"
+                          className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/40"
+                          onClick={() => window.open(member.social.linkedin, "_blank")}
+                        >
+                          <FiLinkedin className="h-3.5 w-3.5 text-white" />
+                        </Button>
+                      )}
+                      {member.social.portfolio && (
+                        <Button
+                          size="icon"
+                          variant="secondary"
+                          className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/40"
+                          onClick={() => window.open(member.social.portfolio, "_blank")}
+                        >
+                          <FiGlobe className="h-3.5 w-3.5 text-white" />
+                        </Button>
+                      )}
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1">Dr. Debesh Jha</h3>
-                    <p className="text-primary font-medium mb-1">Technical Lead</p>
-                    <p className="text-sm text-muted-foreground mb-3">Assistant Professor (Tenure Track) @USD | Former Sr. Res. Associate</p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">AI/ML specialist in medical imaging, recognized among world’s top scientists.</p>
+                  <div className="p-5">
+                    <span className="text-xs font-semibold text-primary uppercase tracking-wide">{member.role}</span>
+                    <h3 className="text-lg font-bold mt-1 mb-1">{member.name}</h3>
+                    <p className="text-xs text-muted-foreground mb-2">{member.college}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{member.description}</p>
                   </div>
                 </CardContent>
               </Card>
-            </div>
-
-            
-            <div className="lg:col-span-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {teamMembers.slice(0, 2).map((member, index) => (
-                  <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm">
-                    <CardContent className="p-0">
-                      <div className={`relative overflow-hidden rounded-md ${index === 1 ? "h-72" : "h-48"}`}>
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className={`w-full object-cover object-top ${index === 1 ? "h-72" : "h-48"}`}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          {member.social.github && (
-                            <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.github)}}>
-                              <FiGithub className="h-3 w-3 text-white" />
-                            </Button>
-                          )}
-                          {member.social.linkedin && (
-                            <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.linkedin)}}>
-                              <FiLinkedin className="h-3 w-3 text-white" />
-                            </Button>
-                          )}
-                          {member.social.portfolio && (
-                            <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.portfolio)}}>
-                              <FiGlobe className="h-3 w-3 text-white" />
-                            </Button>
-                          )}
-                        </div>
-                      </div>
-                      <div className="p-4">
-                        <h3 className="text-lg font-bold mb-1">{member.name}</h3>
-                        <p className="text-primary font-medium mb-2 text-sm">{member.role}</p>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{member.college},</p>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{member.description}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-                {/* Dipika card */}
-                {(() => {
-                  const member = teamMembers[2];
-                  return (
-                    <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm">
-                      <CardContent className="p-0">
-                        <div className="relative overflow-hidden rounded-md h-72">
-                          <img src={member.image} alt={member.name} className="w-full h-72 object-cover object-top" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            {member.social.github && (
-                              <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.github)}}>
-                                <FiGithub className="h-3 w-3 text-white" />
-                              </Button>
-                            )}
-                            {member.social.linkedin && (
-                              <Button size="icon" variant="secondary" className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30" onClick={()=>{window.open(member.social.linkedin)}}>
-                                <FiLinkedin className="h-3 w-3 text-white" />
-                              </Button>
-                            )}
-                          </div>
-                        </div>
-                        <div className="p-4">
-                          <h3 className="text-lg font-bold mb-1">{member.name}</h3>
-                          <p className="text-primary font-medium mb-2 text-sm">{member.role}</p>
-                          <p className="text-xs text-muted-foreground leading-relaxed">{member.college},</p>
-                          <p className="text-xs text-muted-foreground leading-relaxed">{member.description}</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })()}
-                {/* Who are we? - in the open space to the right of Dipika */}
-                <Card className="border-0 bg-card/80 backdrop-blur-sm flex flex-col">
-                  <CardContent className="p-5 flex flex-col justify-center flex-1">
-                    <h2 className="text-xl font-semibold mb-3">Who are we?</h2>
-                    <p className="text-justify text-sm text-muted-foreground leading-relaxed">
-                      We're from University of South Dakota who built this site to make useful technology for anyone to access. Our aim is to enhance AI in healthcare by building practical, research-driven tools. In the process, we merge our technical capabilities with insights from the medical sphere to come up with solutions that can actually support doctors, researchers, and patients alike, making advanced technology more human-centered and available.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      
-      <div className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Who are we */}
+      <div className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-2xl bg-gradient-to-br from-primary/10 via-background to-background border border-border/50 p-10 md:p-14 text-center">
+            <h2 className="text-3xl font-bold mb-5">Who Are We?</h2>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto text-base">
+              We're a research team from the <span className="font-semibold text-foreground">University of South Dakota</span> building accessible, AI-powered tools for healthcare. Our goal is to bridge cutting-edge machine learning with real clinical needs, creating solutions that support doctors, researchers, and patients with practical, human-centered technology.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Mission */}
+      <div className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Mission</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-12">
-            At the University of South Dakota, we’re committed to transforming healthcare through innovative AI technology. 
-            Our mission is to make advanced diagnostics more accessible, accurate, and efficient for everyone. By combining 
-            cutting-edge machine learning with intuitive design, we’re developing tools that empower both patients and healthcare 
-            professionals to improve health outcomes and deliver smarter, faster care.
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            At the University of South Dakota, we're committed to transforming healthcare through innovative AI technology.
+            Our mission is to make advanced diagnostics more accessible, accurate, and efficient for everyone, combining
+            cutting-edge machine learning with intuitive design to empower both patients and healthcare professionals.
           </p>
         </div>
       </div>
 
-      
-      <div className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      {/* Values */}
+      <div className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-white"><TbBulb size={36}/></span>
+            {[
+              {
+                icon: <TbBulb size={36} />,
+                title: "Innovation First",
+                desc: "We continuously push the boundaries of what's possible with AI technology in healthcare.",
+              },
+              {
+                icon: <FaHeartCircleCheck size={32} />,
+                title: "Patient-Centered",
+                desc: "Every decision we make is guided by improving patient outcomes and experiences.",
+              },
+              {
+                icon: <TbStarFilled size={32} />,
+                title: "Excellence",
+                desc: "We strive for the highest standards in everything we build and deliver.",
+              },
+            ].map((val, i) => (
+              <div key={i} className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white">{val.icon}</span>
+                </div>
+                <h3 className="text-xl font-bold mb-3">{val.title}</h3>
+                <p className="text-muted-foreground">{val.desc}</p>
               </div>
-              <h3 className="text-xl font-bold mb-4">Innovation First</h3>
-              <p className="text-muted-foreground">
-                We continuously push the boundaries of what's possible with AI technology in healthcare.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-white"><FaHeartCircleCheck/></span>
-              </div>
-              <h3 className="text-xl font-bold mb-4">Patient-Centered</h3>
-              <p className="text-muted-foreground">
-                Every decision we make is guided by improving patient outcomes and experiences.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-white"><TbStarFilled/></span>
-              </div>
-              <h3 className="text-xl font-bold mb-4">Excellence</h3>
-              <p className="text-muted-foreground">
-                We strive for the highest standards in everything we build and deliver.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
