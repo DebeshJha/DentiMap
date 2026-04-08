@@ -7,6 +7,11 @@ import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { uploadAndAnalyzeScan } from "@/services/dentimapService";
 import { generatePDFReport } from "@/services/pdfService";
+import dentalXraySample from "@/asserts/Images teeth/DentalX-ray.png";
+import dental2Sample from "@/asserts/Images teeth/dental2.png";
+import dental3Sample from "@/asserts/Images teeth/dental3.png";
+import dental4Sample from "@/asserts/Images teeth/dental4.png";
+import dental5Sample from "@/asserts/Images teeth/dental5.png";
 
 interface AnalysisResult {
   segmentedImage: string;
@@ -20,33 +25,65 @@ interface AnalysisResult {
   imageShape: number[];
 }
 
+const sampleScans = [
+  { name: "Dental X-ray", src: dentalXraySample },
+  { name: "Dental Sample 2", src: dental2Sample },
+  { name: "Dental Sample 3", src: dental3Sample },
+  { name: "Dental Sample 4", src: dental4Sample },
+  { name: "Dental Sample 5", src: dental5Sample },
+];
+
 const UploadScan = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
 
+  const processSelectedFile = (file: File) => {
+    if (!file.type.startsWith("image/")) {
+      toast({
+        title: "Invalid File",
+        description: "Please select a valid image file",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setSelectedFile(file);
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setPreview(reader.result as string);
+    };
+    reader.readAsDataURL(file);
+    setAnalysisResult(null);
+  };
+
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      if (!file.type.startsWith("image/")) {
-        toast({
-          title: "Invalid File",
-          description: "Please select a valid image file",
-          variant: "destructive",
-        });
-        return;
-      }
+      processSelectedFile(file);
+    }
+  };
 
-      setSelectedFile(file);
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPreview(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-      setAnalysisResult(null);
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragging(false);
+  };
+
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragging(false);
+    const file = event.dataTransfer.files?.[0];
+    if (file) {
+      processSelectedFile(file);
     }
   };
 
@@ -167,8 +204,14 @@ const UploadScan = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div
-                className="border-2 border-dashed rounded-lg p-8 text-center cursor-pointer hover:border-blue-500 transition-colors"
+                className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors ${
+                  isDragging ? "border-blue-500 bg-blue-50/50" : "hover:border-blue-500"
+                }`}
                 onClick={() => fileInputRef.current?.click()}
+                onDragOver={handleDragOver}
+                onDragEnter={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDrop}
               >
                 {preview ? (
                   <div className="space-y-4">
@@ -185,7 +228,7 @@ const UploadScan = () => {
                   <div className="space-y-4">
                     <FiUpload className="h-12 w-12 mx-auto text-muted-foreground" />
                     <div>
-                      <p className="text-lg font-medium">Click to upload</p>
+                      <p className="text-lg font-medium">Click or drag and drop to upload</p>
                       <p className="text-sm text-muted-foreground">
                         PNG, JPG, JPEG up to 10MB
                       </p>
@@ -200,6 +243,34 @@ const UploadScan = () => {
                 onChange={handleFileSelect}
                 className="hidden"
               />
+              <div className="space-y-3">
+                <div>
+                  <p className="text-sm font-medium">Sample</p>
+                  <p className="text-sm text-muted-foreground">
+                    Download a sample below, then upload it to try the model.
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {sampleScans.map((scan) => (
+                    <a
+                      key={scan.name}
+                      href={scan.src}
+                      download={`${scan.name.replace(/\s+/g, "-").toLowerCase()}.png`}
+                      className="group border rounded-lg overflow-hidden hover:border-blue-500 transition-colors"
+                    >
+                      <img
+                        src={scan.src}
+                        alt={scan.name}
+                        className="h-24 w-full object-cover"
+                      />
+                      <div className="p-2 flex items-center justify-between gap-2">
+                        <span className="text-xs truncate">{scan.name}</span>
+                        <FiDownload className="h-3.5 w-3.5 text-muted-foreground group-hover:text-blue-600" />
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
               <Button
                 onClick={handleAnalyze}
                 disabled={!selectedFile || isAnalyzing}
